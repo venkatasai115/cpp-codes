@@ -21,6 +21,7 @@ int main()
 {
     string s;
     getline(cin,s);
+    s+" ";
     vector<string>l=split(s);
     for(auto x:l){
         cout<<stoi(x)<<"\n";
