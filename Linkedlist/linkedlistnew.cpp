@@ -36,6 +36,7 @@ vector<int> split(string s){
            temp=temp+s[i];
        }
        else{
+           cout<<temp<<" ";
            a.push_back(stoi(temp));
            temp="";
        }
@@ -48,6 +49,7 @@ int main(){
     string s;
     cin.ignore();
     getline(cin,s);
+    s=s+" ";
     vector<int>v=split(s);
     for(int i=0;i<v.size();i++){
         insert(v[i]);
