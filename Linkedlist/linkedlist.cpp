@@ -48,6 +48,7 @@ int main(){
     string s;
     cin.ignore();
     getline(cin,s);
+    s=s+" ";
     vector<int>v=split(s);
     for(int i=0;i<v.size();i++){
         insert(&head,v[i]);
