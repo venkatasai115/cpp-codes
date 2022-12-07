@@ -2,29 +2,29 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-vector<string> split(string s){
-    string temp="";
+vector<int> split(string s){
     char b=' ';
-    vector<string>v;
+    string temp="";
+    vector<int> a;
     for(int i=0;i<s.size();i++){
-        if(s[i]!=b){
-            temp+=s[i];
-        }
-        else{
-            v.push_back(temp);
-            temp="";
-        }
+       if(s[i]!=b){
+           temp=temp+s[i];
+       }
+       else{
+           a.push_back(stoi(temp));
+           temp="";
+       }
     }
-    return v;
+    return a;
 }
 int main()
 {
     string s;
     getline(cin,s);
     s+" ";
-    vector<string>l=split(s);
+    vector<int>l=split(s);
     for(auto x:l){
-        cout<<stoi(x)<<"\n";
+        cout<<x<<"\n";
     }
     return 0;
 }

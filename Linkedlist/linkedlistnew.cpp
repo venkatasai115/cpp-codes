@@ -31,12 +31,11 @@ vector<int> split(string s){
     char b=' ';
     string temp="";
     vector<int> a;
-    for(int i=0;i<s.size();i++){
+    for(int i=0;i<=s.size();i++){
        if(s[i]!=b){
            temp=temp+s[i];
        }
        else{
-           cout<<temp<<" ";
            a.push_back(stoi(temp));
            temp="";
        }
@@ -44,6 +43,7 @@ vector<int> split(string s){
     return a;
 }
 int main(){
+    // First enter no of elements to be inserted and then the values
     int n;
     cin>>n;
     string s;
