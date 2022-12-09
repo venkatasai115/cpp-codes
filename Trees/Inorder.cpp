@@ -7,13 +7,12 @@ class Tree{
     Tree* right;
 };
 Tree* head=NULL;
-void preOrderTrav(Tree* curr, vector < int > & preOrder) {
+void inOrderTrav(Tree* curr, vector < int > & inOrder) {
   if (curr == NULL)
     return;
-
-  preOrder.push_back(curr -> data);
-  preOrderTrav(curr -> left, preOrder);
-  preOrderTrav(curr -> right, preOrder);
+  inOrderTrav(curr -> left, inOrder);
+  inOrder.push_back(curr -> data);
+  inOrderTrav(curr -> right, inOrder);
 }
 
 Tree* newNode(int data) {
@@ -38,12 +37,12 @@ int main() {
   head -> right -> right -> left = newNode(9);
   head -> right -> right -> right = newNode(10);
 
-  vector < int > preOrder;
-  preOrderTrav(head, preOrder);
+  vector < int > inOrder;
+  inOrderTrav(head, inOrder);
 
-  cout << "The preOrder Traversal is : "<<"\n";
-  for (int i = 0; i < preOrder.size(); i++) {
-    cout << preOrder[i] << "\n";
+  cout << "The InOrder Traversal is : "<<"\n";
+  for (int i = 0; i < inOrder.size(); i++) {
+    cout << inOrder[i] << "\n";
   }
   return 0;
 }
