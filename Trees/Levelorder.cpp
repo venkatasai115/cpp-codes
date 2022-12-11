@@ -22,11 +22,6 @@ void levelorderTraversal(vector<vector<int>>&levelorder,queue<Tree*> q)
         level.push_back(node->data);
     }
    levelorder.push_back(level);
-  /* for(auto &v:levelorder){
-       for(auto &k:v){
-        cout<<k<<"\n";
-       }
-    }*/
    levelorderTraversal(levelorder,q);
 }
 Tree* newNode(int data){
